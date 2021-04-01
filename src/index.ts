@@ -36,3 +36,4 @@ export {
   StatusFind,
 } from './controllers/initializer';
 export { defaultLogger } from './utils/logger';
+export * as sessionmanager from './controllers/sessionmanager';

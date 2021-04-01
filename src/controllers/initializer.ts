@@ -33,7 +33,8 @@ export type CatchQR = (
   qrCode: string,
   asciiQR: string,
   attempt: number,
-  urlCode?: string
+  urlCode?: string,
+  session?: string
 ) => void;
 
 /**

@@ -140,7 +140,8 @@ export class HostLayer {
       qrCode: string,
       asciiQR: string,
       attempt: number,
-      urlCode?: string
+      urlCode?: string,
+      session?: string
     ) => void
   ) {
     let urlCode = null;
@@ -177,7 +178,13 @@ export class HostLayer {
         }
 
         if (catchQR) {
-          catchQR(result.base64Image, qr, attempt, result.urlCode);
+          catchQR(
+            result.base64Image,
+            qr,
+            attempt,
+            result.urlCode,
+            this.session
+          );
         }
       }
       await sleep(200);
@@ -206,7 +213,8 @@ export class HostLayer {
       qrCode: string,
       asciiQR: string,
       attempt: number,
-      urlCode?: string
+      urlCode?: string,
+      session?: string
     ) => void,
     statusFind?: (statusGet: string, session: string) => void
   ) {
